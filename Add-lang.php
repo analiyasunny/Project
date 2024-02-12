@@ -19,8 +19,10 @@
         <fieldset>
             <label for="linguisticage">Linguistic age: *</label>
             <input name="linguisticage" id="linguisticage" required>
-           
-        </fieldset>
+            <?php
+            include('shared/db.php');
+            ?>
+           </fieldset>
         <button type="submit">Submit</button>
     </form>
 </body>
