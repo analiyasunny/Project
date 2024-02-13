@@ -10,12 +10,12 @@
     <!--Adding link of the pages-->
     <ul>
         <li>
-            <a href="Home.php">Home</a>
+            <a href="home.php">Home</a>
         </li>
         <li>
-            <a href="Add-lang.php">Add Language</a>
+            <a href="add-lang.php">Add Language</a>
         </li>
         <li>
-            <a href="Lang-table.php">Language Table</a>
+            <a href="lang-table.php">Language Table</a>
         </li>
     </ul>
