@@ -18,10 +18,22 @@
         </fieldset>
         <fieldset>
             <label for="linguisticage">Linguistic age: *</label>
-            <input name="linguisticage" id="linguisticage" required>
+            <select name="linguisticage" id="linguisticage" required>
             <?php
             include('shared/db.php');
+
+            $sql = 'SELECT * FROM Lingusticage ORDER BY name';
+            $cmd = $db->prepare($sql);
+            $cmd->execute();
+            $Lingusticage = $cmd->fetchAll();
+
+            foreach ($Lingusticage as $Lingusticages) {
+                echo '<option>' . $Lingusticages['name'] . '</option>';
+            }
+
+            $db = null;
             ?>
+        </select> 
            </fieldset>
         <button type="submit">Submit</button>
     </form>
