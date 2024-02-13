@@ -7,6 +7,7 @@
 </head>
 <body>
     <h1>Language Table</h1>
+    <!--Adding link of the pages-->
     <ul>
         <li>
             <a href="Home.php">Home</a>
@@ -18,5 +19,3 @@
             <a href="Lang-table.php">Language Table</a>
         </li>
     </ul>
-    </body>
-</html>
