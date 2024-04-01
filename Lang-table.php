@@ -1,4 +1,4 @@
-<?php 
+    <?php 
     //including the shared header
     include('shared/header.php'); 
     $title = 'World Languages and Speakers';
