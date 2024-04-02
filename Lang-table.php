@@ -16,7 +16,7 @@
 
     //Showing the Language list
     echo '<h1>Language Table</h1>';
-    echo '<table><thead><th>Language</th><th>Native Speakers</th><th>Country</th><th>linguistic age</th></thead>';
+    echo '<table><thead><th>Language</th><th>Native Speakers</th><th>Country</th><th>linguistic age</th><th>Actions</th></thead>';
 
     // looping through the data result from the query, and displaying each show name
     foreach ($Language as $Languages) {
@@ -25,6 +25,14 @@
         <td>' . $Languages['NativeSpeakers'] . '</td>
         <td>' . $Languages['Country'] . '</td>
         <td>' . $Languages['linguisticage'] . '</td>
+        <td>
+        <a href="edit-language.php?languageId=' . $Languages['languageId'] . '">
+            Edit
+        </a>&nbsp;
+        <a href="delete-language.php?languageId=' .$Languages['languageId'] . '" onclick="return confirmDelete();">
+            Delete
+        </a>
+        </td>
         </tr>';
           }
 
