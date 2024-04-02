@@ -15,7 +15,7 @@ $linguisticage = null;
 
 if (is_numeric($languageId)) {
 
-  
+    try {
     include('shared/db.php');
 
     $sql = "SELECT * FROM Language WHERE languageId = :languageId";
@@ -30,6 +30,11 @@ if (is_numeric($languageId)) {
     $Country = $Language['Country'];
     $linguisticage = $Language['linguisticage'];
     $photo = $Language['photo'];  // fill var w/show photo name if there is one
+}
+catch (Exception $err) {
+    header('location:error.php');
+    exit();
+}
 }
 
 ?>

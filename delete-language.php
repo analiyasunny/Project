@@ -3,6 +3,8 @@
 $languageId = $_GET['languageId'];
 
 if (is_numeric($languageId)) {
+    include('shared/auth.php');
+    try {
     // connect to db
     include('shared/db.php');
 
@@ -22,5 +24,10 @@ if (is_numeric($languageId)) {
 
     // redirect back to updated shows.php (eventually)
     header('location:lang-table.php');
+}
+catch (Exception $err) {
+    header('location:error.php');
+    exit();
+}
 }
 ?>

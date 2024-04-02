@@ -1,0 +1,4 @@
+ErrorDocument 404 https://lamp.computerstudi.es/~Analiya200562203/phptv/404.php
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule \.php$ https://lamp.computerstudi.es/~Analiya200562203/phptv/404.php [L]

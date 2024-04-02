@@ -66,6 +66,7 @@ else {
 }
 
 if ($ok == true) {
+    try {
     // connect to db using the PDO (PHP Data Objects Library)
     include('shared/db.php');
 
@@ -76,7 +77,7 @@ if ($ok == true) {
     // link db connection w/SQL command we want to run
     $cmd = $db->prepare($sql);
 
-    // map each input to a column in the shows table
+    // map each input to a column in the Language table
     $cmd->bindParam(':Language', $Language, PDO::PARAM_STR, 100);
     $cmd->bindParam(':NativeSpeakers', $NativeSpeakers, PDO::PARAM_STR, 100);
     $cmd->bindParam(':Country', $Country, PDO::PARAM_STR, 50);
@@ -92,6 +93,11 @@ if ($ok == true) {
 
     // show msg to user
     echo 'Language Updated';
+}
+catch (Exception $err) {
+    header('location:error.php');
+    exit();
+}   
 }
 ?>
 </main>

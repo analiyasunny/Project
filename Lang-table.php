@@ -3,6 +3,7 @@
     include('shared/header.php'); 
     $title = 'World Languages and Speakers';
     
+    try {
     //including the shared Database
     include('shared/db.php');
 
@@ -13,6 +14,11 @@
     // runnig query and storing results 
     $cmd->execute();
     $Language = $cmd->fetchAll();
+}
+catch (Exception $err) {
+    header('location:error.php');
+    exit();
+}
 
     //Showing the Language list
     echo '<h1>Language Table</h1>';
@@ -27,7 +33,7 @@
         <td>' . $Languages['Language'] . '</td>
         <td>';
         if ($Languages['photo'] != null) {
-            echo '<img src="img/uploads/' . $Languages['photo'] . '" />';
+            echo '<img src="img/uploads/' . $Languages['photo'] . '" class="thumbnail" />';
         }
         echo '</td>
         <td>' . $Languages['NativeSpeakers'] . '</td>

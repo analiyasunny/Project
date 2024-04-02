@@ -3,6 +3,7 @@
 $username = $_POST['username'];
 $password = $_POST['password'];
 
+try {
 // 2. connect
 include('shared/db.php');
 $sql = "SELECT * FROM users WHERE username = :username";
@@ -30,5 +31,10 @@ else {
 
     $db = null;
     header('location:lang-table.php');
+}
+}
+catch (Exception $err) {
+    header('location:error.php');
+    exit();
 }
 ?>

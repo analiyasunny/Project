@@ -23,6 +23,7 @@
             <label for="linguisticage">Linguistic age: *</label>
             <select name="linguisticage" id="linguisticage" required>
             <?php
+            try {
             //including shared Database
             include('shared/db.php');
 
@@ -39,12 +40,17 @@
             
             //disconnect
             $db = null;
+        }
+        catch (Exception $err) {
+            header('location:error.php');
+            exit();
+        }
             ?>
         </select> 
            </fieldset>
            <fieldset>
         <label for="photo">Photo:</label>
-        <input type="file" id="photo" name="photo" />
+        <input type="file" id="photo" name="photo" accept="image/*" />
     </fieldset>
         <button type="submit">Submit</button>
     </form>
