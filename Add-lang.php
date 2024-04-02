@@ -1,11 +1,12 @@
 <?php 
     //Adding shared header 
+    include('shared/auth.php');
     include('shared/header.php'); 
     $title = 'World Languages and Speakers';
 ?>
  <h2>World Languages and Speakers</h2>
  <!-- Creating the form to enter the inputs-->
-    <form method="post" action="insert-lang.php">
+    <form method="post" action="insert-lang.php" enctype="multipart/form-data">
         <fieldset>
             <label for="Language">Language: *</label>
             <input name="Language" id="Language" required/>
@@ -41,6 +42,10 @@
             ?>
         </select> 
            </fieldset>
+           <fieldset>
+        <label for="photo">Photo:</label>
+        <input type="file" id="photo" name="photo" />
+    </fieldset>
         <button type="submit">Submit</button>
     </form>
 </body>

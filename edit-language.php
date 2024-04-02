@@ -1,5 +1,6 @@
 <?php 
 $title = 'Edit Language';
+include('shared/auth.php');
 include('shared/header.php'); 
 
 // get the languageId from the URL parameter using $_GET
@@ -11,30 +12,30 @@ $NativeSpeakers = null;
 $Country = null;
 $linguisticage = null;
 
-// if languageId is numeric, fetch language from the database
+
 if (is_numeric($languageId)) {
 
-    // connect to the database
+  
     include('shared/db.php');
 
-    // fetch language data from the database
     $sql = "SELECT * FROM Language WHERE languageId = :languageId";
     $cmd = $db->prepare($sql);
     $cmd->bindParam(':languageId', $languageId, PDO::PARAM_INT);
     $cmd->execute();
     $Language = $cmd->fetch(PDO::FETCH_ASSOC);
 
-    // assign values to variables
+  
     $LanguageName = $Language['Language'];
     $NativeSpeakers = $Language['NativeSpeakers'];
     $Country = $Language['Country'];
     $linguisticage = $Language['linguisticage'];
+    $photo = $Language['photo'];  // fill var w/show photo name if there is one
 }
 
 ?>
 
 <h2>World Languages and Speakers</h2>
-<form method="post" action="update-lang.php">
+<form method="post" action="update-lang.php" enctype="multipart/form-data">
     <fieldset>
         <label for="Language">Language: *</label>
         <input name="Language" id="Language" required value="<?php echo htmlspecialchars($LanguageName); ?>"/>
@@ -51,14 +52,11 @@ if (is_numeric($languageId)) {
         <label for="linguisticage">Linguistic age: *</label>
         <select name="linguisticage" id="linguisticage" required>
             <?php
-            // set up & run query, store data results
+           
             $sql = "SELECT * FROM Lingusticage ORDER BY name";
             $cmd = $db->prepare($sql);
             $cmd->execute();
             $Lingusticage = $cmd->fetchAll(PDO::FETCH_ASSOC);
-
-            // loop through list of linguistic ages, adding each one to dropdown 1 at a time
-            // check each linguistic age & select the one that matches the language we're editing
             foreach ($Lingusticage as $Lingusticages) {
                 if ($Lingusticages['name'] == $linguisticage) {
                     echo '<option selected>' . htmlspecialchars($Lingusticages['name']) . '</option>';
@@ -70,6 +68,16 @@ if (is_numeric($languageId)) {
         </select> 
     </fieldset>
     <input type="hidden" name="languageId" id="languageId" value="<?php echo $languageId; ?>" />
+    <fieldset>
+        <label for="photo">Photo:</label>
+        <input type="file" id="photo" name="photo" accept="image/*" />
+        <input type="hidden" id="currentPhoto" name="currentPhoto" value="<?php echo $photo; ?>" />
+        <?php
+        if ($photo != null) {
+            echo '<img src="img/uploads/' . $photo . '" alt="Language Photo" />';
+        }
+        ?>
+    </fieldset>
     <button class="offset-button">Submit</button>
 </form>
 </main>
