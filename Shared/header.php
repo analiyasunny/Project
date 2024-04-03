@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/site.css" />
+    <script src="js/scripts.js" defer ></script>
 </head>
 <body>
     <header id="navbar">
@@ -20,7 +28,7 @@
             }            
             ?>
             <li class="navbar-item">
-              <a class="navbar-link" href="lang-table.php">Show Library</a>
+              <a class="navbar-link" href="lang-table.php">Show Languages</a>
             </li>
             <?php
             if (!empty($_SESSION['username'])) {

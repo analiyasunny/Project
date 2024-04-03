@@ -29,7 +29,7 @@ if (is_numeric($languageId)) {
     $NativeSpeakers = $Language['NativeSpeakers'];
     $Country = $Language['Country'];
     $linguisticage = $Language['linguisticage'];
-    $photo = $Language['photo'];  // fill var w/show photo name if there is one
+    $photo = $Language['photo'];  // fill var w/Language photo name if there is one
 }
 catch (Exception $err) {
     header('location:error.php');

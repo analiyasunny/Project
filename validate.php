@@ -24,8 +24,6 @@ if (!password_verify($password, $user['password'])) {
     header('location:login.php?invalid=true');
 }
 else {
-    // login is valid,  both username + hashed password match user in db
-    // store identity in session object on web server
     session_start(); // accesses the current session on the server
     $_SESSION['username'] = $username;
 

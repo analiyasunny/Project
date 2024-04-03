@@ -1,12 +1,15 @@
 <?php
 $title = 'Register';
-require('shared/header.php');
+require('shared/header.php');// 1. Including the shared header
+
+// HTML content for user registration form
 ?>
 <h2>User Registration</h2>
   <h5>Passwords must be a minimum of 8 characters,
     including 1 digit, 1 upper-case letter, and 1 lower-case letter.
   </h5>
   <?php
+  // Display error message if username already exists
   if (!empty($_GET['duplicate'])) {
     echo '<h4 class="err">Username already exists</h4>';
   }
@@ -14,7 +17,7 @@ require('shared/header.php');
   <form method="post" action="save-registration.php">
     <fieldset>
       <label for="username">Username: *</label>
-      <input name="username" id="username" required type="email" placeholder="email@email.com" />
+      <input name="username" id="username" required ype="email" placeholder="email@email.com" />
     </fieldset>
     <fieldset>
       <label for="password">Password: *</label>
