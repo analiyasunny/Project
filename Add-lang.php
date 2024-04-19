@@ -4,6 +4,7 @@
     include('shared/header.php'); 
     $title = 'World Languages and Speakers';
 ?>
+<link rel="stylesheet" href="css/site.css">
  <h2>World Languages and Speakers</h2>
  <!-- Creating the form to enter the inputs-->
     <form method="post" action="insert-lang.php" enctype="multipart/form-data">

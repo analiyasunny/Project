@@ -8,7 +8,7 @@
   /* Basic styling for the header */
   body {
     font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
+    background-color: #ffffff;
   }
   
   .container {
@@ -18,7 +18,7 @@
   }
   
   #navbar {
-    background-color: #03070b;
+    background-color: #ba9bc4;
     color: white;
   }
   
@@ -139,3 +139,6 @@ th {
 .actions a + a {
     margin-left: 10px;
 }
+
+
+

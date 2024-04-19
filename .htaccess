@@ -1,4 +1,4 @@
-ErrorDocument 404 https://lamp.computerstudi.es/~Analiya200562203/Language/404.php
+ErrorDocument 404 localhost/Project/
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule \.php$ https://lamp.computerstudi.es/~Analiya200562203/Language/404.php [L]
+RewriteRule \.php$ localhost/Project/[L]
