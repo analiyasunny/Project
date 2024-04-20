@@ -1,143 +1,138 @@
 /* Resetting some default browser styles */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Basic styling for the header */
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #ffffff;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  #navbar {
-    background-color: #ba9bc4;
-    color: white;
-  }
-  
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Basic styling for the header */
+body {
+  font-family: Georgia; /* Changed font-family to Georgia */
+  background-color: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+#navbar {
+  background-color: #ba9bc4;
+  color: white;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.home-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar-logo {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.navbar-links {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-item {
+  margin-left: 15px;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: #f8f9fa;
+}
+
+/* Styling for the navbar menu on smaller screens */
+@media (max-width: 968px) {
   .navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-  }
-  
-  .home-link {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  .navbar-logo {
-    width: 40px;
-    height: 40px;
-    background-color: white;
-    border-radius: 50%;
-    margin-right: 10px;
-  }
-  
-  .navbar-links {
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-  }
-  
-  .navbar-item {
-    margin-left: 15px;
-  }
-  
-  .navbar-link {
-    text-decoration: none;
-    color: white;
-    transition: all 0.3s ease;
-  }
-  
-  .navbar-link:hover {
-    color: #f8f9fa;
-  }
-  
-  /* Styling for the navbar menu on smaller screens */
-  @media (max-width: 968px) {
-    .navbar-container {
       flex-direction: column;
       align-items: flex-start;
-    }
-  
-    .detached {
+  }
+
+  .detached {
       display: none;
       width: 100%;
       margin-top: 10px;
-    }
-  
-    #navbar-menu {
+  }
+
+  #navbar-menu {
       display: flex;
       justify-content: space-between;
       align-items: center;
-    }
-  
-    .navbar-links {
+  }
+
+  .navbar-links {
       flex-direction: column;
-    }
-  
-    .navbar-item {
+  }
+
+  .navbar-item {
       margin: 5px 0;
-    }
-  
-    .navbar-link {
+  }
+
+  .navbar-link {
       padding: 5px 10px;
       border-radius: 5px;
-    }
   }
-  
-  body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
 }
 
 h1 {
-    text-align: center;
+  text-align: center;
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
 
 th, td {
-    border: 1px solid #241d1d;
-    padding: 8px;
-    text-align: left;
+  border: 1px solid #241d1d; /* Changed border color to #241d1d */
+  padding: 8px;
+  text-align: left;
 }
 
 th {
-    background-color: #f2f2f2;
+  background-color: #f2f2f2;
 }
 
 .thumbnail {
-    max-width: 100px;
-    max-height: 100px;
+  max-width: 100px;
+  max-height: 100px;
 }
 
 .actions a {
-    color: #007bff;
-    text-decoration: none;
+  color: #007bff;
+  text-decoration: none;
 }
 
 .actions a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .actions a + a {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 form {
@@ -165,7 +160,7 @@ select {
 select:focus {
   border-color: #ba9bc4;
   outline: 0;
-  box-shadow: 0 0 0 0.2rem #ba9bc4
+  box-shadow: 0 0 0 0.2rem #ba9bc4;
 }
 
 button[type="submit"] {
@@ -179,34 +174,6 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   background-color: #be4be5;
-}
-
-form {
-  margin-top: 20px;
-}
-
-fieldset {
-  margin-bottom: 20px;
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-select {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-select:focus {
-  border-color: #007bff;
-  outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 button {
